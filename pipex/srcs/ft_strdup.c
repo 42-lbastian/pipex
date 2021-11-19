@@ -6,7 +6,7 @@
 /*   By: lbastian <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/10/15 01:11:47 by lbastian          #+#    #+#             */
-/*   Updated: 2021/10/21 14:44:36 by Bastian          ###   ########.fr       */
+/*   Updated: 2021/11/19 16:15:04 by Bastian          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,7 +18,8 @@ char	*ft_strdup(char *s1)
 	char	*dest;
 
 	i = 0;
-	if (!(dest = malloc(sizeof(char) * (ft_strlen(s1) + 1))))
+	dest = malloc(sizeof(char) * (ft_strlen(s1) + 1));
+	if (!dest)
 		return (NULL);
 	while (s1[i])
 	{

@@ -6,7 +6,7 @@
 /*   By: lbastian <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/10/10 13:39:21 by lbastian          #+#    #+#             */
-/*   Updated: 2021/10/21 10:57:02 by Bastian          ###   ########.fr       */
+/*   Updated: 2021/11/19 16:16:42 by Bastian          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,7 +20,7 @@ char	*ft_strcat_path(char *str1, char *str2)
 
 	i = 0;
 	y = 0;
-	dst = malloc(sizeof(sizeof(char) * (ft_strlen(str1) + ft_strlen(str2) + 2)));
+	dst = malloc(sizeof(char) * (ft_strlen(str1) + ft_strlen(str2) + 2));
 	if (!dst)
 		return (NULL);
 	while (str1[i])
