@@ -13,7 +13,7 @@ The goal of this project is to reproduce the functionality of a **pipe** (**|**)
 
 <h2 id="usage_id"> Usage: </h2>
 
-#### How to use it:
+#### How to run it:
 
 ```shell
 /pipex file1 cmd1 cmd2 file2
