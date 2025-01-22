@@ -13,10 +13,15 @@ The goal of this project is to reproduce the functionality of a **pipe** (**|**)
 
 <h2 id="usage_id"> Usage: </h2>
 
+#### Compilation: (in the folder that contain the makefile)
+```shell
+make
+```
+
 #### How to run it:
 
 ```shell
-/pipex file1 cmd1 cmd2 file2
+./pipex file1 cmd1 cmd2 file2
 ```
 Who behave exactly the same as the shell command below:
 ```shell
