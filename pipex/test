@@ -1,9 +1,0 @@
-./pipex deepthought.txt "lss2" "cat" outfile && <deepthought.txt lss2 | cat > outfile2
-
-./pipex deepthought.txt "lss2 2" "cat" outfile && <deepthought.txt "lss2 2" | cat > outfile2
-
-./pipex deepthought.txt "./ls22" "cat" outfile && <deepthought.txt ./ls22 | cat > outfile2
-
-./pipex deepthought.txt "ls2" "cat" outfile && <deepthought.txt ls2 | cat > outfile2
-
-./pipex deepthought.txt "./ls2" "cat" outfile && <deepthought.txt ./ls2 | cat > outfile2

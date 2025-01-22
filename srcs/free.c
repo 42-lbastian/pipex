@@ -6,11 +6,19 @@
 /*   By: Bastian <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/10/29 09:52:56 by Bastian           #+#    #+#             */
-/*   Updated: 2021/11/19 16:14:03 by Bastian          ###   ########.fr       */
+/*   Updated: 2021/11/24 10:14:41 by Bastian          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../includes/pipex.h"
+
+void	ft_close_all(t_list **lst)
+{
+	close((*lst)->fd[0]);
+	close((*lst)->fd[1]);
+	close((*lst)->fd_in_out[0]);
+	close((*lst)->fd_in_out[1]);
+}
 
 void	ft_free_cmd(t_list **lst)
 {

@@ -6,14 +6,13 @@
 /*   By: lbastian <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/10/29 19:51:43 by lbastian          #+#    #+#             */
-/*   Updated: 2021/10/21 16:59:15 by Bastian          ###   ########.fr       */
+/*   Updated: 2021/11/24 14:58:19 by Bastian          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../includes/tools.h"
-#include <stdio.h>
 
-static int		ft_hm(char const *s, char c)
+int	ft_hm(char const *s, char c)
 {
 	size_t	nbr;
 	int		i;
@@ -36,16 +35,14 @@ static int		ft_hm(char const *s, char c)
 	return (nbr);
 }
 
-static char		**ft_mal(char **strs, char const *s, char c)
+char	**ft_mal(char **strs, char *s, char c, int i)
 {
 	size_t	count;
-	int		i;
 	int		h;
 
 	count = 0;
-	i = 0;
-	h = 0;
-	while (s[h])
+	h = -1;
+	while (h++ < (ft_strlen(s) - 1))
 	{
 		if (s[h] != c)
 			count++;
@@ -58,18 +55,20 @@ static char		**ft_mal(char **strs, char const *s, char c)
 			i++;
 		}
 		if (s[h + 1] == '\0' && s[h] != c)
-			if (!(strs[i] = malloc(sizeof(char) * count + 1)))
+		{
+			strs[i] = malloc(sizeof(char) * count + 1);
+			if (!strs)
 				return (0);
-		h++;
+		}
 	}
 	return (strs);
 }
 
-static char		**ft_cpy(char **strs, char const *s, char c)
+char	**ft_cpy(char **strs, char const *s, char c)
 {
-	int i;
-	int j;
-	int h;
+	int	i;
+	int	j;
+	int	h;
 
 	i = 0;
 	j = 0;
@@ -79,12 +78,14 @@ static char		**ft_cpy(char **strs, char const *s, char c)
 		if (s[h] != c)
 			strs[i][j++] = s[h];
 		else if (h > 0 && s[h - 1] != c)
+		{
 			if (h != 0)
 			{
 				strs[i][j] = '\0';
 				j = 0;
 				i++;
 			}
+		}
 		if (s[h + 1] == '\0' && s[h] != c)
 			strs[i][j] = '\0';
 		h++;
@@ -92,14 +93,15 @@ static char		**ft_cpy(char **strs, char const *s, char c)
 	return (strs);
 }
 
-char			**ft_split(char *s, char c)
+char	**ft_split(char *s, char c)
 {
 	char	**rtn;
 	int		nbr_w;
 
 	if (!s || !*s)
 	{
-		if (!(rtn = malloc(sizeof(char *) * 1)))
+		rtn = malloc(sizeof(char *) * 1);
+		if (!rtn)
 			return (NULL);
 		*rtn = (void *)0;
 		return (rtn);
@@ -108,7 +110,7 @@ char			**ft_split(char *s, char c)
 	rtn = malloc(sizeof(char *) * (nbr_w + 1));
 	if (!rtn)
 		return (0);
-	if (ft_mal(rtn, s, c) != 0)
+	if (ft_mal(rtn, s, c, 0) != 0)
 		ft_cpy(rtn, s, c);
 	else
 	{

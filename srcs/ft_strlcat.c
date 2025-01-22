@@ -6,17 +6,16 @@
 /*   By: lbastian <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/10/10 13:39:21 by lbastian          #+#    #+#             */
-/*   Updated: 2021/11/19 16:16:42 by Bastian          ###   ########.fr       */
+/*   Updated: 2021/11/24 11:03:07 by Bastian          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../includes/tools.h"
 
-char	*ft_strcat_path(char *str1, char *str2)
+char	*ft_strcat_path(char *str1, char *str2, int y)
 {
 	char	*dst;
 	int		i;
-	int		y;
 
 	i = 0;
 	y = 0;

@@ -1,23 +1,24 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   tools.c                                            :+:      :+:    :+:   */
+/*   tools.h                                            :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: Bastian <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2021/11/19 16:18:56 by Bastian           #+#    #+#             */
-/*   Updated: 2021/11/19 16:19:20 by Bastian          ###   ########.fr       */
+/*   Created: 2021/11/24 15:00:14 by Bastian           #+#    #+#             */
+/*   Updated: 2021/11/24 15:00:18 by Bastian          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../includes/tools.h"
+#ifndef TOOLS_H
+# define TOOLS_H
 
-int	ft_strlen(char *str)
-{
-	int	i;
+# include <stdlib.h>
 
-	i = 0;
-	while (str[i])
-		i++;
-	return (i);
-}
+char		**ft_split(char *s, char c);
+int			ft_strlen(char *str);
+char		*ft_strcat_path(char *str2, char *str1, int y);
+char		*ft_strdup(char *s1);
+int			ft_is_relative(char *str);
+
+#endif
